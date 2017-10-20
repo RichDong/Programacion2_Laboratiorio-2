@@ -59,5 +59,10 @@ public class Maestro {
     public void setContra(String contra) {
         this.contra = contra;
     }
+
+    @Override
+    public String toString() {
+        return "Maestro{" + "nombre=" + nombre + ", titulo=" + titulo + ", maestria=" + maestria + ", usuario=" + usuario + ", contra=" + contra + '}';
+    }
     
 }

@@ -12,7 +12,7 @@ public class Clases {
     public Clases() {
     }
 
-    public Clases(String nombre, String seccion, int cantalumn, String maestro, int unidadesval) {
+    public Clases(String nombre, String seccion, int cantalumn, String maestro, int unidadesval, int precio) {
         this.nombre = nombre;
         this.seccion = seccion;
         this.cantalumn = cantalumn;
@@ -67,5 +67,11 @@ public class Clases {
     public void setprecio(int precio) {
         this.precio = precio;
     }
+
+    @Override
+    public String toString() {
+        return "Clases{" + "nombre=" + nombre + ", seccion=" + seccion + ", cantalumn=" + cantalumn + ", precio=" + precio + ", maestro=" + maestro + ", unidadesval=" + unidadesval + '}';
+    }
+    
 
 }

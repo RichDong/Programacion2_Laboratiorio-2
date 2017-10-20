@@ -16,13 +16,27 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                 case 1:
                     break;
                 case 2:
-                    
+                    int costo = 0;
                     JOptionPane.showInputDialog("MATRICULA");
                     String nom = JOptionPane.showInputDialog("Nombre del Alumno");
                     int dinero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuanto capital posee"));
-                    String numcuenta =  JOptionPane.showInputDialog("Numero de Cuenta");
-                    int maxclases =  Integer.parseInt(JOptionPane.showInputDialog("Cuatas clases quiere llevar?"));
-                    
+                    String numcuenta = JOptionPane.showInputDialog("Numero de Cuenta");
+                    int ed = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad"));
+                    String user =  JOptionPane.showInputDialog("Ingrese su nombre de usuario");
+                    String contra = JOptionPane.showInputDialog("Ingrese su nombre de usuario");
+                    int maxclases = Integer.parseInt(JOptionPane.showInputDialog("Cuatas clases quiere llevar?"));
+                    while (costo < dinero) {
+                        for (int i = 0; i < maxclases; i++) {
+                            String nomclas = JOptionPane.showInputDialog("Ingrese el nombre de la clase que quiere matricular");
+                            for (int j = 0; j < listac.size(); j++) {
+                                costo += listac.get(i).getprecio();
+                            }
+                            
+
+                        }
+
+                    }
+
                     break;
                 case 3:
                     int menu3 = Integer.parseInt(JOptionPane.showInputDialog("Configuracion\n" + "1.Crear clases\n" + "2.Asignar maestros"));
@@ -52,7 +66,7 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
 
                                     }
                                 }
-                                listac.add(new Clases());
+                                listac.add(new Clases(clase, seccion, cantalumn, maestro, unidadv, precio));
                             }
                             break;
                         case 2:

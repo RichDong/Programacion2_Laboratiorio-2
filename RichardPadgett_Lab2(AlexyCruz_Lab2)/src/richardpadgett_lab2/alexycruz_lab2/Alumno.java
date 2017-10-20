@@ -68,6 +68,11 @@ public class Alumno {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "usuario=" + usuario + ", contra=" + contra + ", nombre=" + nombre + ", numeroc=" + numeroc + ", dinero=" + dinero + ", edad=" + edad + '}';
+    }
     
 
 }
