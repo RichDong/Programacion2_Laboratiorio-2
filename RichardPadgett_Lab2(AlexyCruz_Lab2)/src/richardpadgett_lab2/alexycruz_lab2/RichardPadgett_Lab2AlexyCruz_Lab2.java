@@ -5,29 +5,61 @@ import javax.swing.JOptionPane;
 
 public class RichardPadgett_Lab2AlexyCruz_Lab2 {
 
+    static Alumno a = new Alumno();
+    static Maestro n = new Maestro();
+    static ArrayList<Alumno>mm = new ArrayList();
+    static ArrayList<Maestro>mas = new ArrayList();
+
     public static void main(String[] args) {
         int opcion = 0;
         ArrayList<Maestro> listam = new ArrayList();
         ArrayList<Alumno> listaa = new ArrayList();
         ArrayList<Clases> listac = new ArrayList();
+        
 
         while (opcion != 4) {
             int menu = Integer.parseInt(JOptionPane.showInputDialog("INICIO\n" + "1.Log In\n" + "2.Matricula\n" + "3.Administracion"));
             switch (menu) {
                 case 1:
                     String imp = "";
-                    String a = JOptionPane.showInputDialog("LOGIN\n" + "ingrese su nombre de usuario\n");
-                    String b = JOptionPane.showInputDialog("ingrese su contrasena");
-                    for (int i = 0; i < listaa.size(); i++) {
-                        if (listaa.get(i).getUsuario().equals(a) && listaa.get(i).getContra().equals(b)) {
-                           
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Contrasena incorrecta o Nombre de usuario incorrcto");
-                        }
+                    int oo = Integer.parseInt(JOptionPane.showInputDialog("LOGON\n" + "1.Alumno\n" + "2.maestro"));
+                    switch (oo) {
+                        case 1:
+                            String us = JOptionPane.showInputDialog("ingrese su nombre de usaurio");
+                            String contr = JOptionPane.showInputDialog("ingrese su contrasena");
+                            boolean b = false;
+                            for ( Alumno al: listaa) {
+                                if(a.getUsuario().equals(us)&&a.getContra().equals(contr)){
+                                    a = al;
+                                    b = true;
+                                }else{
+                                    mm.add(a);
+                                    
+                                }
+                            }
+                            if (b){
+                                menualumn();
+                            }
 
+                            break;
+                        case 2:
+                             String usm = JOptionPane.showInputDialog("ingrese su nombre de usaurio");
+                            String contrm = JOptionPane.showInputDialog("ingrese su contrasena");
+                            boolean v = false;
+                            for ( Maestro ma: listam) {
+                                if(ma.getUsuario().equals(usm)&&ma.getContra().equals(contrm)){
+                                    mas= mas;
+                                    b = true;
+                                }else{
+                                    mm.add(a);
+                                    
+                                }
+                            }
+                            if (v){
+                                menualumn();
+                            }
+                            break;
                     }
-                    
-
                     break;
                 case 2:
                     int contalumn = 0;
@@ -62,7 +94,6 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
 
                         }
                         Alumno temp = new Alumno();
-                        
 
                     }
                     listaa.add(new Alumno(user, contra, nom, user, dinero, ed));
@@ -134,9 +165,10 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
             }
         }
     }
-   public static void menuest(){
-       JOptionPane.showInputDialog("Login\n"+"1.ver clases\n"+"2.remover clases"+"3.agregar clases\n"+"4.buzon\n"+"5.salir\n");
-       
-   }
+
+    public static void menualumn() {
+        JOptionPane.showInputDialog("Login\n" + "1.ver clases\n" + "2.remover clases" + "3.agregar clases\n" + "4.buzon\n" + "5.salir\n");
+
+    }
 
 }
