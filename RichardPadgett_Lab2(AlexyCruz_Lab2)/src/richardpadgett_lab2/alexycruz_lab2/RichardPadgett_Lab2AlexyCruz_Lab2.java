@@ -16,9 +16,16 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                 case 1:
                     break;
                 case 2:
+                    
+                    JOptionPane.showInputDialog("MATRICULA");
+                    String nom = JOptionPane.showInputDialog("Nombre del Alumno");
+                    int dinero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuanto capital posee"));
+                    String numcuenta =  JOptionPane.showInputDialog("Numero de Cuenta");
+                    int maxclases =  Integer.parseInt(JOptionPane.showInputDialog("Cuatas clases quiere llevar?"));
+                    
                     break;
                 case 3:
-                    int menu3 = Integer.parseInt(JOptionPane.showInputDialog("Configuracion\n" + "1.Crear clases\n" + "2.Asignar Maestros"));
+                    int menu3 = Integer.parseInt(JOptionPane.showInputDialog("Configuracion\n" + "1.Crear clases\n" + "2.Asignar maestros"));
                     switch (menu3) {
                         case 1:
                             int numclas = Integer.parseInt(JOptionPane.showInputDialog("Cuantas clases desea crear?"));
@@ -29,7 +36,7 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                                 String clase = JOptionPane.showInputDialog("Nombre de clase # " + i + 1);
                                 String seccion = JOptionPane.showInputDialog("Numero de seccion de clase # " + i + 1);
                                 int cantalumn = Integer.parseInt(JOptionPane.showInputDialog("Cantidad maxima de alimnos de clase # " + i + 1));
-                                String precio = JOptionPane.showInputDialog("Precio de la clase # " + i + 1);
+                                int precio = Integer.parseInt(JOptionPane.showInputDialog("Precio de la clase # " + i + 1));
                                 String nomtemp = JOptionPane.showInputDialog("Nombre del maesto # " + i + 1);
 
                                 while (maestro != nomtemp) {
@@ -45,20 +52,20 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
 
                                     }
                                 }
-                                listac.add(new Clases(clase, seccion, cantalumn, maestro, unidadv));
+                                listac.add(new Clases());
                             }
                             break;
                         case 2:
                             int numaes = Integer.parseInt(JOptionPane.showInputDialog("Cuantas maestros desea asignar?"));
                             for (int i = 0; i < numaes; i++) {
-                                String clase = JOptionPane.showInputDialog("Nombre del maestro # " + i + 1);
+                                String nombre = JOptionPane.showInputDialog("Nombre del maestro # " + i + 1);
                                 String titu = JOptionPane.showInputDialog("Titulo del maestro # " + i + 1);
                                 String maestria = JOptionPane.showInputDialog("Maestria del maestro # " + numaes);
                                 double salario = Integer.parseInt(JOptionPane.showInputDialog("Salatio del maestro # " + i + 1));
                                 String usuario = JOptionPane.showInputDialog("Nombre de usuario del maestro # " + i + 1);
                                 String contram = JOptionPane.showInputDialog("Contrasena del maestro # " + i + 1);
                                 int cantclass = Integer.parseInt(JOptionPane.showInputDialog("Cantidad de clases disponibles del maestro # " + i + 1));
-
+                                listam.add(new Maestro(nombre, titu, maestria, usuario, contram));
                             }
 
                             break;

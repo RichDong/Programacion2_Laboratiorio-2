@@ -5,6 +5,7 @@ public class Clases {
     String nombre;
     String seccion;
     int cantalumn;
+    int precio;
     String maestro;
     int unidadesval;
 
@@ -17,6 +18,7 @@ public class Clases {
         this.cantalumn = cantalumn;
         this.maestro = maestro;
         this.unidadesval = unidadesval;
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -57,6 +59,13 @@ public class Clases {
 
     public void setUnidadesval(int unidadesval) {
         this.unidadesval = unidadesval;
+    }
+      public int getprecio() {
+        return precio;
+    }
+
+    public void setprecio(int precio) {
+        this.precio = precio;
     }
 
 }
