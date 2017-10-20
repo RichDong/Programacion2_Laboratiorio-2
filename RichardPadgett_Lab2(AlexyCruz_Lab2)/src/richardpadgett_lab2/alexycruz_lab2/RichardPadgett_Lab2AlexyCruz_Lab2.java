@@ -151,7 +151,7 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                                 int cantclass = Integer.parseInt(JOptionPane.showInputDialog("Cantidad de clases disponibles del maestro # " + i + 1));
                                 listam.add(new Maestro(nombre, titu, maestria, usuario, contram));
 
-                                System.out.println("cree maestro");
+                                System.out.println("cree maestro" );
                             }
 
                             System.out.println(listam.size());
