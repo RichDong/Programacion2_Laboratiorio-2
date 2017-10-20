@@ -10,7 +10,7 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
         ArrayList<Maestro> listam = new ArrayList();
         ArrayList<Alumno> listaa = new ArrayList();
         ArrayList<Clases> listac = new ArrayList();
-        
+
         while (opcion != 4) {
             int menu = Integer.parseInt(JOptionPane.showInputDialog("INICIO\n" + "1.Log In\n" + "2.Matricula\n" + "3.Administracion"));
             switch (menu) {
@@ -25,23 +25,22 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                     int ed = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad"));
                     String user = JOptionPane.showInputDialog("Ingrese su nombre de usuario");
                     String contra = JOptionPane.showInputDialog("Ingrese su nombre de usuario");
-                    
-                    int maxclases = Integer.parseInt(JOptionPane.showInputDialog("Cuatas clases quiere llevar?"));
+                    String lista = "";
+                    int maxclases = Integer.parseInt(JOptionPane.showInputDialog("Cuantas clases quiere llevar?"));
                     while (costo < dinero) {
-                        for (int i = 0; i < maxclases; i++) {
-                            for (int j = 0; j < listac.size(); j++) {
-                                
-                                
-                            }
-                            String nomclas = JOptionPane.showInputDialog("Ingrese el nombre de la clase que quiere matricular");
-                            for (int j = 0; j < listac.size(); j++) {
-                                costo += listac.get(i).getprecio();
-                                if(costo > dinero){
-                                    JOptionPane.showMessageDialog(null,"No posee sufiecientes fondos para matricular estas clases");
-                                }
-                                
-                            }
+                        for (int j = 0; j < listac.size(); j++) {
+                            lista += listac.get(j).getNombre()+"\n";
                         }
+                        JOptionPane.showMessageDialog(null, lista);
+                        String nomclas = JOptionPane.showInputDialog("Ingrese el nombre de la clase que quiere matricular");
+                        for (int j = 0; j < listac.size(); j++) {
+                            costo += listac.get(j).getprecio();
+                            if (costo > dinero) {
+                                JOptionPane.showMessageDialog(null, "No posee sufiecientes fondos para matricular estas clases");
+                            }
+
+                        }
+
                     }
 
                     break;
