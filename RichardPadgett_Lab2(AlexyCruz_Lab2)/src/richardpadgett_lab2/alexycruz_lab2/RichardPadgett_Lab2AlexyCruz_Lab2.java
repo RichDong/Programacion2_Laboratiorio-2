@@ -15,8 +15,18 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
             int menu = Integer.parseInt(JOptionPane.showInputDialog("INICIO\n" + "1.Log In\n" + "2.Matricula\n" + "3.Administracion"));
             switch (menu) {
                 case 1:
+                    String imp = "";
                     String a = JOptionPane.showInputDialog("LOGIN\n" + "ingrese su nombre de usuario\n");
                     String b = JOptionPane.showInputDialog("ingrese su contrasena");
+                    for (int i = 0; i < listaa.size(); i++) {
+                        if (listaa.get(i).getUsuario().equals(a) && listaa.get(i).getContra().equals(b)) {
+                           
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Contrasena incorrecta o Nombre de usuario incorrcto");
+                        }
+
+                    }
+                    
 
                     break;
                 case 2:
@@ -39,9 +49,10 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                         String nomclas = JOptionPane.showInputDialog("Ingrese el nombre de la clase que quiere matricular");
 
                         for (int i = 0; i < listac.size(); i++) {
-                          contalumn++;
-                          if(contalumn > listac.get(i).cantalumn)
-                              JOptionPane.showMessageDialog(null, "Esta clase esta llena");
+                            contalumn++;
+                            if (contalumn > listac.get(i).cantalumn) {
+                                JOptionPane.showMessageDialog(null, "Esta clase esta llena");
+                            }
                         }
                         for (int j = 0; j < listac.size(); j++) {
                             costo += listac.get(j).getprecio();
@@ -50,6 +61,8 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                             }
 
                         }
+                        Alumno temp = new Alumno();
+                        
 
                     }
                     listaa.add(new Alumno(user, contra, nom, user, dinero, ed));
@@ -121,5 +134,9 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
             }
         }
     }
+   public static void menuest(){
+       JOptionPane.showInputDialog("Login\n"+"1.ver clases\n"+"2.remover clases"+"3.agregar clases\n"+"4.buzon\n"+"5.salir\n");
+       
+   }
 
 }

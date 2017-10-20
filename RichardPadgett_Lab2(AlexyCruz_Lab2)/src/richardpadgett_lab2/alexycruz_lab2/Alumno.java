@@ -1,5 +1,7 @@
 package richardpadgett_lab2.alexycruz_lab2;
 
+import java.util.ArrayList;
+
 public class Alumno {
 
     String usuario;
@@ -8,6 +10,8 @@ public class Alumno {
     String numeroc;
     double dinero;
     int edad;
+
+    ArrayList<Clases> listac2 = new ArrayList();
 
     public Alumno() {
     }
@@ -19,6 +23,14 @@ public class Alumno {
         this.numeroc = numeroc;
         this.dinero = dinero;
         this.edad = edad;
+    }
+
+    public ArrayList<Clases> getListac2() {
+        return listac2;
+    }
+
+    public void setListac(ArrayList<Clases> listac) {
+        this.listac2 = listac;
     }
 
     public String getUsuario() {
@@ -73,6 +85,5 @@ public class Alumno {
     public String toString() {
         return "Alumno{" + "usuario=" + usuario + ", contra=" + contra + ", nombre=" + nombre + ", numeroc=" + numeroc + ", dinero=" + dinero + ", edad=" + edad + '}';
     }
-    
 
 }
