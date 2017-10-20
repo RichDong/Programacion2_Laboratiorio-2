@@ -7,10 +7,11 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
 
     public static void main(String[] args) {
         int opcion = 0;
+        ArrayList<Maestro> listam = new ArrayList();
+        ArrayList<Alumno> listaa = new ArrayList();
+        ArrayList<Clases> listac = new ArrayList();
+        
         while (opcion != 4) {
-            ArrayList<Maestro> listam = new ArrayList();
-            ArrayList<Alumno> listaa = new ArrayList();
-            ArrayList<Clases> listac = new ArrayList();
             int menu = Integer.parseInt(JOptionPane.showInputDialog("INICIO\n" + "1.Log In\n" + "2.Matricula\n" + "3.Administracion"));
             switch (menu) {
                 case 1:
@@ -22,19 +23,25 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                     int dinero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuanto capital posee"));
                     String numcuenta = JOptionPane.showInputDialog("Numero de Cuenta");
                     int ed = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad"));
-                    String user =  JOptionPane.showInputDialog("Ingrese su nombre de usuario");
+                    String user = JOptionPane.showInputDialog("Ingrese su nombre de usuario");
                     String contra = JOptionPane.showInputDialog("Ingrese su nombre de usuario");
+                    
                     int maxclases = Integer.parseInt(JOptionPane.showInputDialog("Cuatas clases quiere llevar?"));
                     while (costo < dinero) {
                         for (int i = 0; i < maxclases; i++) {
+                            for (int j = 0; j < listac.size(); j++) {
+                                
+                                
+                            }
                             String nomclas = JOptionPane.showInputDialog("Ingrese el nombre de la clase que quiere matricular");
                             for (int j = 0; j < listac.size(); j++) {
                                 costo += listac.get(i).getprecio();
+                                if(costo > dinero){
+                                    JOptionPane.showMessageDialog(null,"No posee sufiecientes fondos para matricular estas clases");
+                                }
+                                
                             }
-                            
-
                         }
-
                     }
 
                     break;
@@ -53,19 +60,28 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                                 int precio = Integer.parseInt(JOptionPane.showInputDialog("Precio de la clase # " + i + 1));
                                 String nomtemp = JOptionPane.showInputDialog("Nombre del maesto # " + i + 1);
 
-                                while (maestro != nomtemp) {
-
-                                    for (int j = 0; j < listam.size(); j++) {
-                                        if (listam.get(j).getNombre().equals(nomtemp)) {
-                                            maestro = nomtemp;
-                                        } else {
-                                            JOptionPane.showInputDialog("Este maestro no esta registrado");
-                                        }
-
-                                        unidadv = Integer.parseInt(JOptionPane.showInputDialog("Unidades valorativas de clase # " + i + 1));
-
+                                for (int j = 0; j < listam.size(); j++) {
+                                    if (listam.get(j).getNombre().equals(nomtemp)) {
+                                        maestro = nomtemp;
                                     }
                                 }
+
+                                while (!maestro.equals(nomtemp)) {
+
+                                    nomtemp = JOptionPane.showInputDialog("Nombre del maesto # " + i + 1);
+                                    System.out.println(listam.size());
+
+                                    System.out.println("nomtemp: " + nomtemp);
+                                    System.out.println("maestro: " + maestro);
+                                    for (int k = 0; k < listam.size(); k++) {
+                                        if (listam.get(k).getNombre().equals(nomtemp)) {
+                                            maestro = nomtemp;
+                                        }
+
+                                    }
+
+                                }
+                                unidadv = Integer.parseInt(JOptionPane.showInputDialog("Unidades valorativas de clase # " + i + 1));
                                 listac.add(new Clases(clase, seccion, cantalumn, maestro, unidadv, precio));
                             }
                             break;
@@ -80,7 +96,11 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                                 String contram = JOptionPane.showInputDialog("Contrasena del maestro # " + i + 1);
                                 int cantclass = Integer.parseInt(JOptionPane.showInputDialog("Cantidad de clases disponibles del maestro # " + i + 1));
                                 listam.add(new Maestro(nombre, titu, maestria, usuario, contram));
+
+                                System.out.println("cree maestro");
                             }
+
+                            System.out.println(listam.size());
 
                             break;
 
