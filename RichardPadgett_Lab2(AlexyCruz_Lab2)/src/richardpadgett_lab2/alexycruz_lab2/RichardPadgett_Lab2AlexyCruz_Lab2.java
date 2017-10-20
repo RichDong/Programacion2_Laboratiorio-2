@@ -15,14 +15,12 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
             int menu = Integer.parseInt(JOptionPane.showInputDialog("INICIO\n" + "1.Log In\n" + "2.Matricula\n" + "3.Administracion"));
             switch (menu) {
                 case 1:
-                    String a = JOptionPane.showInputDialog("LOGIN\n"+"ingrese su nombre de usuario\n");
+                    String a = JOptionPane.showInputDialog("LOGIN\n" + "ingrese su nombre de usuario\n");
                     String b = JOptionPane.showInputDialog("ingrese su contrasena");
-                    
-                    
-                            
+
                     break;
                 case 2:
-                    int contalumn=0;
+                    int contalumn = 0;
                     int costo = 0;
                     JOptionPane.showInputDialog("MATRICULA");
                     String nom = JOptionPane.showInputDialog("Nombre del Alumno");
@@ -39,8 +37,12 @@ public class RichardPadgett_Lab2AlexyCruz_Lab2 {
                         }
                         JOptionPane.showMessageDialog(null, lista);
                         String nomclas = JOptionPane.showInputDialog("Ingrese el nombre de la clase que quiere matricular");
-                        contalumn++;
-                        
+
+                        for (int i = 0; i < listac.size(); i++) {
+                          contalumn++;
+                          if(contalumn > listac.get(i).cantalumn)
+                              JOptionPane.showMessageDialog(null, "Esta clase esta llena");
+                        }
                         for (int j = 0; j < listac.size(); j++) {
                             costo += listac.get(j).getprecio();
                             if (costo > dinero) {
